@@ -1,0 +1,68 @@
+@use '../utils/colors';
+@use '../utils/sizes';
+@use '../extends/button';
+
+.process {
+  .container {
+    display: flex;
+    .process-proc {
+      width: 75%;
+    }
+    .process-img {
+      display: flex;
+      justify-content: flex-end;
+      width: 25%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  h1 {
+    padding: sizes.$h1-padding;
+  }
+  p {
+    color: colors.$font-color-gray;
+  }
+  ul {
+    padding: sizes.$paddingY-40;
+  }
+  li {
+    padding: sizes.$paddingY-20;
+    display: flex;
+    align-items: center;
+
+    &:first-child,
+    &:last-child {
+      background: linear-gradient(
+        to right,
+        colors.$secondary-bg,
+        colors.$tertiary-bg
+      );
+    }
+
+    .proc-num {
+      padding-right: 50px;
+      font-weight: 600;
+      color: colors.$fourthtiary-bg;
+    }
+
+    .process-description {
+      padding-right: 40px;
+    }
+  }
+  background: colors.$secondary-bg;
+
+  button {
+    @extend %button;
+    width: 220px;
+  }
+}
+.video {
+  .video-description {
+    button {
+      @extend %button;
+      width: 230px;
+      margin-top: 30px;
+    }
+  }
+}

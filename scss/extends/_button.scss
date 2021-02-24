@@ -1,0 +1,11 @@
+@use '../utils/colors';
+
+%button {
+  color: colors.$font-color-dirtywhite;
+  background-color: colors.$download-button;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  height: 40px;
+  padding: 0 20px;
+}

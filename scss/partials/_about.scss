@@ -1,0 +1,55 @@
+@use '../utils/colors';
+@use '../utils/sizes';
+@use '../extends/circles';
+
+.right-circle {
+  @extend %right-circle;
+  z-index: -2;
+}
+
+.left-circle {
+  @extend %left-circle;
+  z-index: -2;
+}
+
+.about {
+  text-align: center;
+  background: colors.$primary-bg;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+
+  .about-img {
+    height: 100px;
+  }
+
+  .about-title {
+    width: 60%;
+    margin: auto;
+    h1 {
+      padding: sizes.$h1-padding;
+    }
+    p {
+      color: colors.$font-color-gray;
+    }
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin: sizes.$marginY-100;
+
+    .services-item {
+      text-align: left;
+      img {
+        padding: sizes.$paddingY-20;
+      }
+      p {
+        font-size: 16px;
+        color: colors.$font-color-gray;
+        padding: sizes.$paddingY-20;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.video {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/*responsive design */
+@media screen and (max-width: 950px) {
+  .video {
+    grid-template-columns: 1fr;
+  }
+}

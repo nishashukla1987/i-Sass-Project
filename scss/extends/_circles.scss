@@ -1,0 +1,21 @@
+@use '../utils/colors';
+
+%right-circle {
+  height: 600px;
+  width: 600px;
+  border-radius: 100%;
+  background: colors.$secondary-bg;
+  position: absolute;
+  left: -250px;
+  bottom: 10%;
+}
+
+%left-circle {
+  height: 700px;
+  width: 700px;
+  border-radius: 100%;
+  background: colors.$secondary-bg;
+  position: absolute;
+  right: -350px;
+  bottom: 20%;
+}

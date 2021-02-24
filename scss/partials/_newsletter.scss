@@ -1,0 +1,132 @@
+@use "../utils/colors";
+@use "../utils/sizes";
+@use '../extends/button';
+
+$max-width: 1150px;
+$input-color: #242f3e;
+$size-30: 30px;
+
+/* newsletter */
+@mixin font-size-padding-top($font-size) {
+  padding-top: 50px;
+  font-size: $font-size;
+}
+
+.newsletter .container {
+  max-width: unset;
+
+  .newsletter-advertise-background {
+    background-image: url("../../images/header-footer-bg.svg");
+    background-size: cover;
+    margin-bottom: 100px;
+
+    .newsletter-advertise {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $size-30;
+      max-width: $max-width;
+      margin: 0 auto;
+
+      .advertise-description {
+        width: 70%;
+        h2 {
+          @include font-size-padding-top(35px);
+          letter-spacing: 2px;
+        }
+        p {
+          @include font-size-padding-top(30px);
+        }
+        .advertise-description_buttons {
+          margin-top: $size-30;
+        }
+      }
+
+      .advertise-img {
+        img {
+          padding-top: $size-30;
+          width: 200px;
+        }
+      }
+    }
+  }
+}
+
+/*  updates */
+.newsletter-updates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: $max-width;
+  margin: auto;
+
+  .updates-form form {
+    display: flex;
+    width: 550px;
+    height: 50px;
+
+    input[type="email"] {
+      height: sizes.$height-50;
+      width: 100%;
+      padding: 0 16px;
+      background: $input-color;
+      border: none;
+      color: colors.$font-color-white;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    button {
+      @extend %button;
+      border-radius: 0;
+      width: 70%;
+      height: 100%;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
+/*responsive design */
+@media screen and (max-width: 950px) {
+  .newsletter .container {
+    .newsletter-advertise-background {
+      .newsletter-advertise {
+        .advertise-description {
+          h2 {
+            @include font-size-padding-top(25px);
+            letter-spacing: 2px;
+          }
+          p {
+            @include font-size-padding-top(20px);
+          }
+        }
+      }
+    }
+  }
+
+  .newsletter-updates {
+    flex-direction: column;
+    align-items: center;
+
+    .updates-form form {
+      width: 450px;
+      button {
+        width: 40%;
+      }
+    }
+  }
+}
+
+/*responsive design */
+@media screen and (max-width: 450px) {
+  .newsletter-advertise {
+    flex-direction: column;
+  }
+  .newsletter-updates .updates-form form {
+    flex-direction: column;
+    width: 350px;
+    button {
+      width: 100%;
+    }
+  }
+}
